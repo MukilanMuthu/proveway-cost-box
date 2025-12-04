@@ -2,6 +2,14 @@
 document.addEventListener("DOMContentLoaded", () => {
     const cards = document.querySelectorAll(".card");
     const radios = document.querySelectorAll('.card input[type="radio"]');
+    const totalElement = document.querySelector(".total-text");
+
+    function updateTotal(card) {
+        // Find the 'price-now' text inside the selected card
+        const priceText = card.querySelector(".new").textContent;
+        // Update the total element
+        totalElement.textContent = `Total : ${priceText}`;
+    }
 
     radios.forEach(radio => {
     radio.addEventListener("change", () => {
@@ -13,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const selectedCard = radio.closest(".card");
         if (selectedCard) {
             selectedCard.classList.add("selected");
+            updateTotal(selectedCard);
         }
         });
     });

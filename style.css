@@ -17,8 +17,7 @@ body {
 }
 
 .wrapper {
-    width: 341px;
-    height: 603px;
+    width: 342px;
     padding: 16px;
 }
 
@@ -30,7 +29,7 @@ body {
     text-align: center;
     font-size: 20px;
     font-weight: 600;
-    padding: 16px 0 16px 0;
+    padding: 16px 0;
     color: var(--highlight-color);
 }
 
@@ -108,7 +107,7 @@ body {
 }
 
 .card.selected{
-    background: var(--background-color);
+    background: var(--active-background);
     border: 2px solid var(--highlight-color);
 }
 
@@ -125,7 +124,12 @@ body {
 .unit{
     font-size: 14px;
     font-weight: 600;
-    margin-right: 31px;
+    margin-right: 11px;
+}
+
+.bundle{
+    display: flex;
+    flex-direction: row;
 }
 
 .discount{
@@ -140,9 +144,6 @@ body {
     font-weight: 400;
 }
 
-/* .price{
-    text-align: right;
-} */
 
 .new{
     font-size: 14.46px;
@@ -157,10 +158,10 @@ body {
 }
 
 .plan-options {
-    border-top: 1px dashed var(--background-color);
     max-height: 0;
     overflow: hidden;
     opacity: 0;
+    text-align: center;
     transition: max-height 0.4s ease-out, opacity 0.3s ease-in;
 }
 
@@ -174,7 +175,7 @@ body {
 
 .options-header {
     display: grid;
-    grid-template-columns: 40px 1fr 1fr 1fr; 
+    grid-template-columns: 40px 1fr 1fr 1fr 1fr; 
     column-gap: 8px;
     font-size: 11px;
     margin-bottom: 4px;
@@ -191,7 +192,7 @@ body {
 
 .options-row {
     display: grid;
-    grid-template-columns: 40px 1fr 1fr 1fr; /* # + two dropdowns */
+    grid-template-columns: 40px 1fr 1fr 1fr 1fr; /* # + two dropdowns */
     column-gap: 8px;
     align-items: center;
     margin-bottom: 6px;
@@ -199,23 +200,23 @@ body {
 
 .options-label {
     font-size: 11px;
+    text-align: right;
 }
 
 .plan-options select {
     width: 100%;
     padding: 4px 6px;
-    font-size: 12px;
+    font-size: 10px;
     border: 1px solid var(--inactive-border);
     border-radius: 3px;
-    background-color: #FFFFFF;
+    background-color: var(--background-color);
     box-shadow: 0 1px 0 rgba(0,0,0,0.05);
-    appearance: inherit ;         
+    appearance: base-select;         
 }
 
 .offer-footer{
     display: flex;
     justify-content: space-between;
-    margin-top: 12px;
     font-size: 12px;
     }
 
@@ -232,13 +233,22 @@ body {
 }
 
 .add-to-cart{
-    margin-top: 10px;
     width: 100%;
     border: none;
     padding: 10px 0;
     background: var(--highlight-color);
-    color: #fff;
+    color: var(--background-color);
     border-radius: 4px;
-    font-size: 14px;
+    font-size: 12px;
+    border-spacing: 2px;
     cursor: pointer;
+}
+
+.power{
+    padding: 6px;
+    text-align: right;
+    font-style: italic;
+    opacity: 40%;
+    font-size: 12px;
+    font-weight: 400;
 }
